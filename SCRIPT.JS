@@ -33,8 +33,8 @@ weatherDesc.innerHTML = "<b>" + abc +  " </b>";
 
 //Set Image
 imgWeather.setAttribute("src",weatherIconUrl);
-imgWeather.setAttribute("height","110");
-imgWeather.setAttribute("width","110");
+imgWeather.setAttribute("height","150");
+imgWeather.setAttribute("width","150");
 
 //Set BG Image
 
