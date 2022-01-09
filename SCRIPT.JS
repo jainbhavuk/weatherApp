@@ -84,10 +84,11 @@ else
 
 function getGeoData()
 {
-//let baseUrl = "api.openweathermap.org/data/2.5/weather?";
+  //let baseUrl = "api.openweathermap.org/data/2.5/weather?";
 const apikey = '1ee4e8347e751f60ad276c152361e9d7';
 
 navigator.geolocation.getCurrentPosition((pos)=>{
+  
    // console.log(pos);
     let lat = pos.coords.latitude;
     let long = pos.coords.longitude;
@@ -180,7 +181,12 @@ navigator.geolocation.getCurrentPosition((pos)=>{
 
     // let geoName = res['data']['name'];
     // //console.log(geoName);
-    }).catch((err)=>{alert("Can\'t get location. Please search by City name!")});;
+   
+    }).catch((err)=>{alert("Can\'t get location. Please search by City name!")});
 
-})
+}, ()=>{
+  enableHighAccuracy: false;
+  timeout: 3000;
+});
+ 
 }
