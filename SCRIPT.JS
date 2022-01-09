@@ -1,4 +1,4 @@
-document.body.style.backgroundImage = "url('./img/def.jpg')";
+document.body.style.backgroundImage = "url('./img/clear.jpg')";
 let cityName = document.getElementById('cityName');
 let weatherDesc = document.getElementById('weatherDesc');
 let temp = document.getElementById('tempData');

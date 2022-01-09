@@ -3,7 +3,7 @@ body
    
     background-position: fixed;
     
-    background-image: url('./img/def.jpg');
+    background-image: url('./img/clear.jpg');
 }
 .err{
     color: red;
@@ -14,7 +14,7 @@ body
     background-color: black;
     color:white;
     text-align: center;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .display
