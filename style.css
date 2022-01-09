@@ -84,3 +84,13 @@ body
 {
     margin-top: -15%;
 }
+
+#forecast .row{
+    display: inline-block;
+}
+#forecast{
+    
+   color:black;
+   font-weight: 700;
+   text-align: center;
+}
