@@ -1,6 +1,6 @@
 body
 {
-   
+    background-image: url('./img/def.jpg');
 }
 .err{
     color: red;
