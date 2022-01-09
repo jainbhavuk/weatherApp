@@ -1,0 +1,83 @@
+body
+{
+   
+}
+.err{
+    color: red;
+}
+
+#subBtn
+{
+    background-color: black;
+    color:white;
+    text-align: center;
+    font-weight: 600;
+}
+
+.display
+{
+    margin-top: 0px;
+}
+.inpHead
+{
+    color: white;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 5px;
+    font-size:25px;
+}
+
+.container-fluid
+{
+   
+   
+    color:white;
+    border-radius: 2px;
+    padding: 20px;
+   padding-top: 35px;
+}
+.display label{
+    font-size: 30px;
+}
+
+.display h1{
+    display: inline-block;
+    font-size: 40px;
+    color: white;
+}
+
+.inputBox
+{
+    font-size: 20px;
+    font-weight: 500;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.form-check
+{
+    display: inline-block;
+}
+
+.cityName
+{
+    font-size: 22px;
+}
+
+
+#imageWeather
+{
+    
+    margin-top: -15px;
+   
+  
+}
+
+#weatherDesc
+{
+    margin-top: 0px;
+}
+
+#tempData
+{
+    margin-top: -15%;
+}
