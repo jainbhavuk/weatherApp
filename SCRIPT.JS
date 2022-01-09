@@ -7,7 +7,21 @@ let citylabel = document.getElementById('citylabel');
 let templabel = document.getElementById('templabel');
 let desclabel = document.getElementById('desclabel');
 let imgWeather = document.getElementById('imageWeather');
+function getLocation() {
+  if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+      //console.log(position.coords.latitude);
+  } else { 
+     // x.innerHTML = "Geolocation is not supported by this browser.";
+     alert('Unable to fetch location');
+  }
+}
 
+function showPosition(position) {
+ // x.innerHTML = "Latitude: " + position.coords.latitude + 
+ // "<br>Longitude: " + position.coords.longitude;
+ //console.log(position.coords.latitude);
+}
 function getData()
 {
 axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cityName.value}&appid=1ee4e8347e751f60ad276c152361e9d7`).then((res)=>{
@@ -81,9 +95,13 @@ else
 
 
 // Data By Device Location
-
+/*
 function getGeoData()
 {
+
+  setTimeout(()=>)
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);}
   //let baseUrl = "api.openweathermap.org/data/2.5/weather?";
 const apikey = '1ee4e8347e751f60ad276c152361e9d7';
 
@@ -190,3 +208,4 @@ navigator.geolocation.getCurrentPosition((pos)=>{
 });
  
 }
+*/
