@@ -86,11 +86,18 @@ body
 }
 
 #forecast .row{
-    display: inline-block;
+    font-size: 30px;
 }
 #forecast{
     
    color:black;
    font-weight: 700;
    text-align: center;
+  
+}
+#forecastable h4{
+    font-size: x-large;
+}
+#forecastable{
+    overflow: hidden;
 }

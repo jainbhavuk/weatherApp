@@ -9,17 +9,17 @@ let desclabel = document.getElementById('desclabel');
 let imgWeather = document.getElementById('imageWeather');
 let tableHead = document.getElementById('tableHead');
 let table = document.getElementById('forecast');
-//let day1Date = document.getElementById('day1Date');
+let day1Date = document.getElementById('day1Date');
 let day2Date = document.getElementById('day2Date');
 let day3Date = document.getElementById('day3Date');
-let day4Date = document.getElementById('day4Date');
-let day5Date = document.getElementById('day5Date');
+//let day4Date = document.getElementById('day4Date');
+//let day5Date = document.getElementById('day5Date');
 
-//let day1Icon = document.getElementById('day1Icon');
+let day1Icon = document.getElementById('day1Icon');
 let day2Icon = document.getElementById('day2Icon');
 let day3Icon = document.getElementById('day3Icon');
-let day4Icon = document.getElementById('day4Icon');
-let day5Icon = document.getElementById('day5Icon');
+//let day4Icon = document.getElementById('day4Icon');
+//let day5Icon = document.getElementById('day5Icon');
 
 function getData()
 {
@@ -99,48 +99,48 @@ function forecastFive()
 {
 axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${cityName.value}&appid=1ee4e8347e751f60ad276c152361e9d7`).then((res)=>{
   //console.log(res);
-  tableHead.textContent = "NEXT 4-DAYS FORECAST";
+  tableHead.textContent = "NEXT 3-DAYS FORECAST";
   tableHead.style.padding = "2px";
   table.style.backgroundColor="white";
   table.style.borderRadius="10px";
 
   //var date;
-  for(let i=5; i<40; i=i+8)
+  for(let i=5; i<22; i=i+8)
   {
   let dayOneTemp = res['data']['list'][i]['dt_txt'];
   let weatherIconCode = res['data']['list'][i]['weather'][0]['icon'];
   forecastDay(dayOneTemp,weatherIconCode);
   }
-  //let weatherIconUrl1 = "http://openweathermap.org/img/wn/" + day1Ic + "@2x.png";
+  let weatherIconUrl1 = "http://openweathermap.org/img/wn/" + day1Ic + "@2x.png";
   let weatherIconUrl2 = "http://openweathermap.org/img/wn/" + day2Ic + "@2x.png";
   let weatherIconUrl3 = "http://openweathermap.org/img/wn/" + day3Ic + "@2x.png";
-  let weatherIconUrl4 = "http://openweathermap.org/img/wn/" + day4Ic + "@2x.png";
-  let weatherIconUrl5 = "http://openweathermap.org/img/wn/" + day5Ic + "@2x.png";
+  //let weatherIconUrl4 = "http://openweathermap.org/img/wn/" + day4Ic + "@2x.png";
+  //let weatherIconUrl5 = "http://openweathermap.org/img/wn/" + day5Ic + "@2x.png";
 
-  //day1Date.innerHTML = "<b>" + day1.slice(8,10) + "/" + day1.slice(5,7);
+  day1Date.innerHTML = "<b>" + day1.slice(8,10) + "/" + day1.slice(5,7);
   day2Date.innerHTML = "<b>" + day2.slice(8,10) + "/" + day2.slice(5,7);
   day3Date.innerHTML = "<b>" + day3.slice(8,10) + "/" + day3.slice(5,7);
-  day4Date.innerHTML = "<b>" + day4.slice(8,10) + "/" + day4.slice(5,7);
-  day5Date.innerHTML = "<b>" + day5.slice(8,10) + "/" + day5.slice(5,7);
+  //day4Date.innerHTML = "<b>" + day4.slice(8,10) + "/" + day4.slice(5,7);
+  //day5Date.innerHTML = "<b>" + day5.slice(8,10) + "/" + day5.slice(5,7);
 
-  //day1Icon.setAttribute("src",weatherIconUrl1);
+  day1Icon.setAttribute("src",weatherIconUrl1);
   day2Icon.setAttribute("src",weatherIconUrl2);
   day3Icon.setAttribute("src",weatherIconUrl3);
-  day4Icon.setAttribute("src",weatherIconUrl4);
-  day5Icon.setAttribute("src",weatherIconUrl5);
+  //day4Icon.setAttribute("src",weatherIconUrl4);
+  //day5Icon.setAttribute("src",weatherIconUrl5);
  
 
   //Adjust Icon Size
-  //day1Icon.setAttribute("height","100");
-  //day1Icon.setAttribute("width","100");
+  day1Icon.setAttribute("height","100");
+  day1Icon.setAttribute("width","100");
   day2Icon.setAttribute("height","100");
   day2Icon.setAttribute("width", "100");
   day3Icon.setAttribute("height","100");
   day3Icon.setAttribute("width", "100");
-  day4Icon.setAttribute("height","100");
-  day4Icon.setAttribute("width", "100");
-  day5Icon.setAttribute("height","100");
-  day5Icon.setAttribute("width", "100");
+  //day4Icon.setAttribute("height","100");
+  //day4Icon.setAttribute("width", "100");
+  //day5Icon.setAttribute("height","100");
+  //day5Icon.setAttribute("width", "100");
   // date = new Date(dayOneTemp*1000)
   // console.log(date.getMonth());
 
