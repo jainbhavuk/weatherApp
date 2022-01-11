@@ -21,6 +21,17 @@ let day3Icon = document.getElementById('day3Icon');
 //let day4Icon = document.getElementById('day4Icon');
 //let day5Icon = document.getElementById('day5Icon');
 
+cityName.addEventListener("keydown",function (event) {
+  
+ 
+  if(event.key === "Enter"){
+    event.preventDefault();
+ // console.log(event);
+    getData();
+  }
+  
+});
+
 function getData()
 {
 axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cityName.value}&appid=1ee4e8347e751f60ad276c152361e9d7`).then((res)=>{
