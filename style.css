@@ -1,6 +1,7 @@
 body
 {
-   
+   margin: 0;
+   padding: 0;
     background-position: fixed;
     
     background-image: url('./img/clear.jpg');
@@ -70,7 +71,7 @@ body
 #imageWeather
 {
     
-    margin-top: -35px;
+    margin-top: -40px;
    
   
 }
@@ -93,11 +94,36 @@ body
    color:black;
    font-weight: 700;
    text-align: center;
-  
+   margin-top: -20px;
 }
 #forecastable h4{
     font-size: x-large;
 }
 #forecastable{
     overflow: hidden;
+}
+
+#sunRiseSet{
+    background-color:white;
+    display:block table-row;
+    padding: 0px;
+    border-radius: 10px;
+    visibility: hidden;
+    margin-top: -10px;
+  
+}
+#sun{
+margin-top: -5px;
+text-align: center;
+vertical-align:middle;
+color: black;
+font-size: 23px;
+font-weight: 600;
+font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+padding: 10px;
+}
+
+#sunTodayHead{
+    font-size: 23px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

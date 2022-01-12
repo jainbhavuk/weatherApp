@@ -21,6 +21,12 @@ let day3Icon = document.getElementById('day3Icon');
 //let day4Icon = document.getElementById('day4Icon');
 //let day5Icon = document.getElementById('day5Icon');
 
+//Sunrise/Sunset
+let sunriseData = document.getElementById('sunriseData');
+let sunsetData  = document.getElementById('sunsetData');
+let sunRiseSet = document.getElementById('sunRiseSet');
+//console.log(new Date(1642038614*1000));
+//console.log(new Date(1642038614*1000).getHours() +":"+ new Date(1642038614*1000).getMinutes()+" AM");
 cityName.addEventListener("keydown",function (event) {
   
  
@@ -35,13 +41,20 @@ cityName.addEventListener("keydown",function (event) {
 function getData()
 {
 axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cityName.value}&appid=1ee4e8347e751f60ad276c152361e9d7`).then((res)=>{
-  //console.log(res);
+ // console.log(res);
   let weatherInfo = res['data']['weather'][0]['main'];
 //Get Values
 let weatherIconCode = res['data']['weather'][0]['icon'];
 let weatherIconUrl = "http://openweathermap.org/img/wn/" + weatherIconCode + "@2x.png";
 //let city = data['name'];
 let tempData = res['data']['main']['temp'];
+
+
+//Getting Sunrise/Sunset Data to pass to sunrise_set();
+let sunrise = new Date((res.data.sys.sunrise)*1000).getHours() +":"+ new Date((res.data.sys.sunrise)*1000).getMinutes();
+
+let sunset = new Date((res.data.sys.sunset)*1000).getHours() +":"+ new Date((res.data.sys.sunset)*1000).getMinutes();
+ 
 
 //Set Values
 tempData = Math.ceil(tempData-273.15);
@@ -101,6 +114,7 @@ else
   document.body.style.backgroundImage = "url('./img/def.jpg')";
 }
 forecastFive();
+sunrise_set(sunrise,sunset);
 }).catch((err)=>{alert('Wrong City Name')});
 }
 
@@ -168,6 +182,14 @@ else if(count==4){day4 = dayTemp;  day4Ic = iconCode;count++; }
 else if(count==5){day5 = dayTemp;  day5Ic = iconCode;count++; }
 }
 
+}
+
+
+function sunrise_set(sunrise, sunset)
+{
+  sunRiseSet.style.visibility="visible";
+  sunriseData.innerHTML = sunrise;
+  sunsetData.innerHTML = sunset;
 }
 
 
