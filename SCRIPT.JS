@@ -51,10 +51,18 @@ let tempData = res['data']['main']['temp'];
 
 
 //Getting Sunrise/Sunset Data to pass to sunrise_set();
-let sunrise = new Date((res.data.sys.sunrise)*1000).getHours() +":"+ new Date((res.data.sys.sunrise)*1000).getMinutes();
+let sunriseHours = new Date((res.data.sys.sunrise)*1000).getHours();
+let sunriseMinutes = new Date((res.data.sys.sunrise)*1000).getMinutes();
+let sunsetHours = new Date((res.data.sys.sunset)*1000).getHours();
+let sunsetMinutes = new Date((res.data.sys.sunset)*1000).getMinutes();
 
-let sunset = new Date((res.data.sys.sunset)*1000).getHours() +":"+ new Date((res.data.sys.sunset)*1000).getMinutes();
- 
+if(sunriseHours <= 9){sunriseHours = "0" + sunriseHours;}
+if(sunriseMinutes <= 9){sunriseMinutes = "0" + sunriseMinutes;}
+if(sunsetHours <= 9){sunsetHours = "0" + sunsetHours;}
+if(sunsetMinutes <= 9){sunsetMinutes = "0" + sunsetMinutes;}
+
+let sunrise = sunriseHours +":"+ sunriseMinutes;
+let sunset = sunsetHours +":"+ sunsetMinutes;
 
 //Set Values
 tempData = Math.ceil(tempData-273.15);
