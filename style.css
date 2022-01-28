@@ -127,3 +127,12 @@ padding: 10px;
     font-size: 23px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+.icons
+{
+ color:black;
+ position:relative;
+ display:inline-flexbox;
+ vertical-align:middle;
+
+ }
